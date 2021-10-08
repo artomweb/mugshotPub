@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Nash;
+    src: url("sp.ttf");
+}
+
+.mainImage {
+    margin: 5% 0 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 2px solid black;
+    outline-offset: 5px;
+}
+
+.imageOptions {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.option {
+    display: inline-block;
+    margin: 0 10%;
+}
+
+.option:nth-child(2) {
+    transform: translateY(60%);
+}
+
+.option:hover {
+    outline: 2px solid black;
+    outline-offset: 5px;
+}
+
+.bigText {
+    font-family: Nash;
+    font-size: 75px;
+    margin: 5% 0;
+}
+
+.isClickable {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.textCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+/* #scoreCont {
+    justify-content: space-evenly;
+} */
