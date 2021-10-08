@@ -25,15 +25,25 @@ let originalDatabase;
 let score;
 
 async function getMugshotList() {
-    let response = await fetch("https://rppi.artomweb.com/mugShot/mugShotList");
-    let json = await response.json();
-
-    database = shuffle(json);
-
-    originalDatabase = database.slice();
-
-    // console.log(database);
+    Papa.parse("mugshotsDir.csv", {
+        download: true,
+        complete: function(results, file) {
+            database = shuffle(results.data);
+            originalDatabase = database.slice();
+        },
+    });
 }
+
+// async function getMugshotList() {
+//     let response = await fetch("https://rppi.artomweb.com/mugShot/mugShotList");
+//     let json = await response.json();
+
+//     database = shuffle(json);
+
+//     originalDatabase = database.slice();
+
+//     // console.log(database);
+// }
 
 function noMoreMugshots() {
     imageOptionsCont.style.display = "none";
