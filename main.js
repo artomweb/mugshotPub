@@ -55,7 +55,7 @@ function nextMugshot() {
     // console.log(thisMug.similarList);
 
     let sketchImage = document.getElementById("sketchImage");
-    sketchImage.src = "https://rppi.artomweb.com/image/sketch/" + thisMug.image;
+    sketchImage.src = "https://rppi.artomweb.com/mugShot/image/sketch/" + thisMug.image;
 
     let options = document.getElementsByClassName("posImage");
 
@@ -67,10 +67,10 @@ function nextMugshot() {
         let thisType = types[i];
         let thisUrl;
         if (thisType == "real") {
-            thisUrl = "https://rppi.artomweb.com/image/real/" + thisMug.image;
+            thisUrl = "https://rppi.artomweb.com/mugShot/image/real/" + thisMug.image;
             options[i].isReal = true;
         } else {
-            thisUrl = "https://rppi.artomweb.com/image/incorrMugs/" + thisMug.similarList.pop();
+            thisUrl = "https://rppi.artomweb.com/mugShot/image/incorrMugs/" + thisMug.similarList.pop();
             options[i].isReal = false;
         }
         // console.log(thisUrl);
