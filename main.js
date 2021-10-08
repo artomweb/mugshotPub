@@ -25,15 +25,24 @@ let originalDatabase;
 let score;
 
 async function getMugshotList() {
-    Papa.parse("mugshotsDir.csv", {
-        download: true,
-        header: true,
-        dynamicTyping: true,
-        complete: function(results, file) {
-            database = shuffle(results.data);
+    return new Promise((resolve, reject) => {
+        Papa.parse("mugshotsDir.csv", {
+            download: true,
+            header: true,
+            dynamicTyping: true,
+            complete: function(results, file) {
+                database = shuffle(results.data);
 
-            originalDatabase = database.slice();
-        },
+                database.forEach((d) => {
+                    d.similarList = d.similarList.replace(/'|]|\[| /g, "").split(",");
+                });
+
+                originalDatabase = database.slice();
+
+                console.log(database);
+                resolve();
+            },
+        });
     });
 }
 
